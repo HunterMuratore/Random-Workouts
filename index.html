@@ -20,6 +20,7 @@
           Select an Exercise:
         </div> </br>
         <select class="exercise-dropdown" onchange="exerciseFunction(this.value);">
+          <option value=""></option>
           <option value="chest">Chest</option>
           <option value="arms">Arms</option>
           <option value="back">Back</option>
@@ -32,6 +33,7 @@
           Select an Intensity:
         </div></br>
         <select class="intensity-dropdown" onchange="intensityFunction(this.value);">
+          <option value=""></option>
           <option value="intense">Intense</option>
           <option value="medium">Medium</option>
           <option value="light">Light</option>
@@ -40,10 +42,14 @@
           Select a Type of Training:
         </div> </br>
         <select class="training-dropdown" onchange="trainingFunction(this.value);">
+          <option value=""></option>
           <option value="strength">Strength</option>
           <option value="body-weight">Body Weight</option>
           <option value="cardio">Cardio</option>
         </select>
+        <div class="generate mt-5">
+          <button type="button" class="btn btn-outline-dark btn-lg" onclick="generateWorkout();">Generate Workout</button>
+        </div>
       </div>
     </body>
 </html>

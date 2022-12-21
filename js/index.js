@@ -110,37 +110,26 @@ const stretchExercises = [
     "Side Lunges"
 ];
 
-// $(document).ready(() => {
-//     alert (chestExercises[1]);
-// });
-
-// var selectedExercise;
-// var selectedIntensity = $("Btn2");
-// var selectedTraining = $("Btn3");
-
-// function onChange() {
-//   var value = selectedExercise.value;
-//   var text = selectedExercise.options[selectedExercise.selectedIndex].text;
-//   console.log(value, text);
-// }
-// $("exercise-dropdown").Change;
+var selectedExercise;
+var selectedIntensity;
+var selectedTraining; 
 
 function exerciseFunction(value) {
-    console.log(value);
+    selectedExercise = value;
 }
 
 function intensityFunction(value) {
-    console.log(value);
+    selectedIntensity = value;
 }
 
 function trainingFunction(value) {
-    console.log(value);
+    selectedTraining = value;
 }
-// $(function(){
 
-//     $("Btn1").change(function(){
-//         var status = this.value;
-        
-//     });
-   
-//    });
+function generateWorkout() {
+    if (selectedExercise === undefined || selectedIntensity === undefined || selectedTraining === undefined) {
+        return alert("Must choose one of each");
+    } else {
+        console.log("You chose a %s, %s, %s workout", selectedIntensity, selectedTraining, selectedExercise);
+    }
+}
