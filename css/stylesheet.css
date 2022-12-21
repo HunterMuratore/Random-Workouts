@@ -2,22 +2,34 @@ html, body {
     margin: 0;
 }
 
-.button1 {
+.exercise {
     background-color: coral;
     font-size: 20px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.button2 {
+.exercise-dropdown {
+    font-size: 20px;
+}
+
+.intensity {
     background-color: rgb(80, 252, 255);
     font-size: 20px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.button3 {
+.intensity-dropdown {
+    font-size: 20px;
+}
+
+.training {
     background-color: rgb(255, 86, 80);
     font-size: 20px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.training-dropdown {
+    font-size: 20px;
 }
 
 .container {

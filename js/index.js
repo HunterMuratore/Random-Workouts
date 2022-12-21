@@ -114,7 +114,33 @@ const stretchExercises = [
 //     alert (chestExercises[1]);
 // });
 
-// var selectedExercise = document.getElementById("Btn1").value;
-// var selectedIntensity = document.getElementById("Btn2").value;
-// var selectedTraining = document.getElementById("Btn3").value;
+// var selectedExercise;
+// var selectedIntensity = $("Btn2");
+// var selectedTraining = $("Btn3");
 
+// function onChange() {
+//   var value = selectedExercise.value;
+//   var text = selectedExercise.options[selectedExercise.selectedIndex].text;
+//   console.log(value, text);
+// }
+// $("exercise-dropdown").Change;
+
+function exerciseFunction(value) {
+    console.log(value);
+}
+
+function intensityFunction(value) {
+    console.log(value);
+}
+
+function trainingFunction(value) {
+    console.log(value);
+}
+// $(function(){
+
+//     $("Btn1").change(function(){
+//         var status = this.value;
+        
+//     });
+   
+//    });

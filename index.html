@@ -16,40 +16,34 @@
         <script src="js/index.js" type="text/javascript"></script>
 
       <div class="container">
-        <div class="exercise-dropdown mt-5">
-          <button class="btn button1 dropdown-toggle" type="button" id="Btn1" data-bs-toggle="dropdown" aria-expanded="false">
-            Select an Exercise
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" value="#chest">Chest</a></li>
-            <li><a class="dropdown-item" value="arms">Arms</a></li>
-            <li><a class="dropdown-item" value="back">Back</a></li>
-            <li><a class="dropdown-item" value="legs">Legs</a></li>
-            <li><a class="dropdown-item" value="shoulders">Shoulders</a></li>
-            <li><a class="dropdown-item" value="core">Core</a></li>
-            <li><a class="dropdown-item" value="stretch">Stretch</a></li>
-          </ul>
-        </div> 
-        <div class="intensity-dropdown mt-5">
-          <button class="btn button2 dropdown-toggle" type="button" id="Btn2"data-bs-toggle="dropdown" aria-expanded="false">
-            Select an Intensity
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" value="intense">Intense</a></li>
-            <li><a class="dropdown-item" value="medium">Medium</a></li>
-            <li><a class="dropdown-item" value="light">Light</a></li>
-          </ul>
-        </div>
-        <div class="training-dropdown mt-5">
-          <button class="btn button3 dropdown-toggle" type="button" id="Btn3" data-bs-toggle="dropdown" aria-expanded="false">
-            Select a Type of Training
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" value="strength">Strength</a></li>
-            <li><a class="dropdown-item" value="body-weight">Body Weight</a></li>
-            <li><a class="dropdown-item" value="cardio">Cardio</a></li>
-          </ul>
-        </div>
+        <div class="exercise mt-5">
+          Select an Exercise:
+        </div> </br>
+        <select class="exercise-dropdown" onchange="exerciseFunction(this.value);">
+          <option value="chest">Chest</option>
+          <option value="arms">Arms</option>
+          <option value="back">Back</option>
+          <option value="legs">Legs</option>
+          <option value="shoulders">Shoulders</option>
+          <option value="core">Core</option>
+          <option value="stretch">Stretch</option>
+        </select>
+        <div class="intensity mt-5">
+          Select an Intensity:
+        </div></br>
+        <select class="intensity-dropdown" onchange="intensityFunction(this.value);">
+          <option value="intense">Intense</option>
+          <option value="medium">Medium</option>
+          <option value="light">Light</option>
+        </select>
+        <div class="training mt-5">
+          Select a Type of Training:
+        </div> </br>
+        <select class="training-dropdown" onchange="trainingFunction(this.value);">
+          <option value="strength">Strength</option>
+          <option value="body-weight">Body Weight</option>
+          <option value="cardio">Cardio</option>
+        </select>
       </div>
     </body>
 </html>
