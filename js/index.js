@@ -3,17 +3,17 @@ const chestExercises = [
     "Dumbbell Bench Press",
     "Pushups",
     "Wide Pushups",
-    "Close Pushup",
-    "Incline Pushup",
-    "Decline Pushup",
+    "Close Pushups",
+    "Incline Pushups",
+    "Decline Pushups",
     "Dumbbell Flyes",
-    "Chest Dips", 
+    "Chest Dips",
     "Incline Bench Press",
     "Decline Bench Press",
     "High Cable Flyes",
     "Mid Cable Flyes",
     "Low Cable Flyes",
-    "Machine Flyes", 
+    "Machine Flyes",
     "Landmine Press"
 ];
 
@@ -62,7 +62,7 @@ const armExercises = [
 const backExercises = [
     "Lat Pulldowns",
     "Close Grip Pulldowns",
-    "Wide Grip Pulldowns", 
+    "Wide Grip Pulldowns",
     "Pullups",
     "L Pullups",
     "Bar Hang",
@@ -95,7 +95,7 @@ const coreExercises = [
 ];
 
 const shoulderExercises = [
-    "Shoulder Press", 
+    "Shoulder Press",
     "Shrugs",
     "Arnold Dumbbell Press",
     "Bentover Lat Raises"
@@ -112,7 +112,15 @@ const stretchExercises = [
 
 var selectedExercise;
 var selectedIntensity;
-var selectedTraining; 
+var selectedTraining;
+var sets1;
+var reps1;
+var sets2;
+var reps2;
+var sets3;
+var reps3;
+var sets4;
+var reps4;
 
 function exerciseFunction(value) {
     selectedExercise = value;
@@ -126,10 +134,237 @@ function trainingFunction(value) {
     selectedTraining = value;
 }
 
+function randomExercise(array) {
+    return array[Math.random(array.length)];
+}
+
 function generateWorkout() {
     if (selectedExercise === undefined || selectedIntensity === undefined || selectedTraining === undefined) {
         return alert("Must choose one of each");
     } else {
         console.log("You chose a %s, %s, %s workout", selectedIntensity, selectedTraining, selectedExercise);
     }
+
+    if (selectedExercise === "chest") {
+        var exercise1 = randomExercise(chestExercises);
+        var exercise2 = randomExercise(chestExercises);
+        var exercise3 = randomExercise(chestExercises);
+        var exercise4 = randomExercise(chestExercises);
+    } else if (selectedExercise === "legs") {
+        var exercise1 = randomExercise(legExercises);
+        var exercise2 = randomExercise(legExercises);
+        var exercise3 = randomExercise(legExercises);
+        var exercise4 = randomExercise(legExercises);
+    } else if (selectedExercise === "back") {
+        var exercise1 = randomExercise(backExercises);
+        var exercise2 = randomExercise(backExercises);
+        var exercise3 = randomExercise(backExercises);
+        var exercise4 = randomExercise(backExercises);
+    } else if (selectedExercise === "arms") {
+        var exercise1 = randomExercise(armExercises);
+        var exercise2 = randomExercise(armExercises);
+        var exercise3 = randomExercise(armExercises);
+        var exercise4 = randomExercise(armExercises);
+    } else if (selectedExercise === "shoulders") {
+        var exercise1 = randomExercise(shoulderExercises);
+        var exercise2 = randomExercise(shoulderExercises);
+        var exercise3 = randomExercise(shoulderExercises);
+        var exercise4 = randomExercise(shoulderExercises);
+    } else if (selectedExercise === "core") {
+        var exercise1 = randomExercise(coreExercises);
+        var exercise2 = randomExercise(coreExercises);
+        var exercise3 = randomExercise(coreExercises);
+        var exercise4 = randomExercise(coreExercises);
+    } else if (selectedExercise === "stretch") {
+        var exercise1 = randomExercise(stretchExercises);
+        var exercise2 = randomExercise(stretchExercises);
+        var exercise3 = randomExercise(stretchExercises);
+        var exercise4 = randomExercise(stretchExercises);
+    }
+
+    if (selectedIntensity === "intense" && selectedTraining === "strength") {
+        reps1 = intenseStrengthReps(exercise1);
+        reps2 = intenseStrengthReps(exercise2);
+        reps3 = intenseStrengthReps(exercise3);
+        reps4 = intenseStrengthReps(exercise4);
+        alert(`Your workout for today is:\n\n${exercise1}: 4 sets, ${reps1} reps\n${exercise2}: 4 sets, ${reps2} reps\n${exercise3}: 4 sets, ${reps3} reps\n${exercise4}: 4 sets, ${reps4} reps\n\nIt is suggested to use heavier weights for this strength-based workout`);
+    } else if (selectedIntensity === "medium" && selectedTraining === "strength") {
+        reps1 = mediumStrengthReps(exercise1);
+        reps2 = mediumStrengthReps(exercise2);
+        reps3 = mediumStrengthReps(exercise3);
+        reps4 = mediumStrengthReps(exercise4);
+        alert(`Your workout for today is:\n\n${exercise1}: 4 sets, ${reps1} reps\n${exercise2}: 4 sets, ${reps2} reps\n${exercise3}: 4 sets, ${reps3} reps\n${exercise4}: 4 sets, ${reps4} reps\n\nIt is suggested to use comfortable weights for this strength-based workout`);
+    } else if (selectedIntensity === "light" && selectedTraining === "strength") {
+        reps1 = lightStrengthReps(exercise1);
+        reps2 = lightStrengthReps(exercise2);
+        reps3 = lightStrengthReps(exercise3);
+        reps4 = lightStrengthReps(exercise4);
+        alert(`Your workout for today is:\n\n${exercise1}: 4 sets, ${reps1} reps\n${exercise2}: 4 sets, ${reps2} reps\n${exercise3}: 4 sets, ${reps3} reps\n${exercise4}: 4 sets, ${reps4} reps\n\nIt is suggested to use lighter weights for this strength-based workout`);
+    }
 }
+
+// Suggested to use to heavier weights to push yourself - Okay to not be able to reach the amount of reps
+function intenseStrengthReps(exercise) {
+    if (chest8reps.includes(exercise)) {
+        return 8;
+    } else if (chest20reps.includes(exercise)) {
+        return 20;
+    } else if (leg8reps.includes(exercise)) {
+        return 8;
+    } else if (leg20reps.includes(exercise)) {
+        return 20;
+    } else if (back8reps.includes(exercise)) {
+        return 8;
+    } else if (back20reps.includes(exercise)) {
+        return 20;
+    } else if (arms8reps.includes(exercise)) {
+        return 8;
+    } else if (arms20reps.includes(exercise)) {
+        return 20;
+    } else {
+        return 20;
+    }
+}
+
+// Suggested to use comfortable weights to allow yourself to reach the amounts reps
+function mediumStrengthReps(exercise) {
+    if (chest8reps.includes(exercise)) {
+        return 8;
+    } else if (chest20reps.includes(exercise)) {
+        return 15;
+    } else if (leg8reps.includes(exercise)) {
+        return 8;
+    } else if (leg20reps.includes(exercise)) {
+        return 15;
+    } else if (back8reps.includes(exercise)) {
+        return 8;
+    } else if (back20reps.includes(exercise)) {
+        return 15;
+    } else if (arms8reps.includes(exercise)) {
+        return 8;
+    } else if (arms20reps.includes(exercise)) {
+        return 15;
+    } else {
+        return 15;
+    }
+}
+
+// Suggested to use light weights and aim for a higher number of reps
+function lightStrengthReps(exercise) {
+    if (chest8reps.includes(exercise)) {
+        return 12;
+    } else if (chest20reps.includes(exercise)) {
+        return 15;
+    } else if (leg8reps.includes(exercise)) {
+        return 12;
+    } else if (leg20reps.includes(exercise)) {
+        return 15;
+    } else if (back8reps.includes(exercise)) {
+        return 12;
+    } else if (back20reps.includes(exercise)) {
+        return 15;
+    } else if (arms8reps.includes(exercise)) {
+        return 12;
+    } else if (arms20reps.includes(exercise)) {
+        return 15;
+    } else {
+        return 15;
+    }
+}
+
+const arms8reps = [
+    "Dumbbell Curls",
+    "Hammer Curls",
+    "Tricep Pulldowns",
+    "Barbell Curls",
+    "Barbell 21s Curl",
+    "Chin Ups",
+    "Close Grip Chin Ups",
+    "Seated Concentration Curls",
+    "Cable Curls",
+    "Cable Face Pulls",
+    "Overhead Tricep Extentions",
+    "Preacher Curls",
+    "Cable Pushdowns",
+    "Reverse Lat Pulldowns",
+    "Wrist Curls",
+    "Reverse Wrist Curls",
+    "Tricep Kickbacks"
+]
+
+const arms20reps = [
+    "Bench Dips",
+    "Wrist Rotations"
+]
+
+const back8reps = [
+    "Lat Pulldowns",
+    "Close Grip Pulldowns",
+    "Wide Grip Pulldowns",
+    "Pullups",
+    "L Pullups",
+    "Barbell Deadlift",
+    "Hex Bar Deadlift",
+    "Barbell Bent Over Rows",
+    "One-Arm Dumbbell Rows",
+    "Seated Rows",
+    "Landmine Rows",
+    "Dumbbell Romanian Deadlifts",
+    "Lying Reverse Flyes",
+    "Bentover Reverse Flyes",
+    "Dumbbell Snatches",
+    "Dumbbell Clean and Press",
+    "Barbell Hang Clean",
+    "Underhand Grip Bentover Rows"
+];
+
+const back20reps = [
+    "Bar Hang",
+    "Kettlebell Swings"
+]
+
+const leg8reps = [
+    "Squats",
+    "Leg Extensions",
+    "Bulgarian Split Squat",
+    "Leg Press",
+    "Front Squats",
+    "Leg Curls",
+    "Lunges",
+    "Straight Leg Deadlifts",
+    "Dumbbell Stepup",
+    "Romanian Deadlift",
+    "Pause Squats",
+    "Barbell Hip Thrust",
+    "Glute Bridges",
+    "Goblet Squat",
+];
+
+const leg20reps = [
+    "Calf Raises",
+    "Jump Squats",
+    "Farmers Walk"
+
+]
+
+const chest8reps = [
+    "Barbell Bench Press",
+    "Dumbbell Bench Press",
+    "Dumbbell Flyes",
+    "Incline Bench Press",
+    "Decline Bench Press",
+    "High Cable Flyes",
+    "Mid Cable Flyes",
+    "Low Cable Flyes",
+    "Machine Flyes",
+    "Landmine Press",
+    "Chest Dips"
+];
+
+const chest20reps = [
+    "Pushups",
+    "Wide Pushups",
+    "Close Pushups",
+    "Incline Pushups",
+    "Decline Pushups",
+];
