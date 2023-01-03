@@ -1,4 +1,3 @@
-
 var selectedExercise;
 var selectedIntensity;
 var selectedTraining;
@@ -15,21 +14,24 @@ var exercise4;
 var sets4;
 var reps4;
 
-function exerciseFunction(value) {
-    selectedExercise = value;
-}
+// Assigns the selected values of the dropdowns to their appropriate variables
+$( document ).ready(function() {
+    $("#exercise-dropdown").change(() => {
+        selectedExercise = $(this).find(":selected").val();
+    });
 
-function intensityFunction(value) {
-    selectedIntensity = value;
-}
+    $("#intensity-dropdown").change(() => {
+        selectedIntensity = $(this).find(":selected").val();
+    });
 
-function trainingFunction(value) {
-    selectedTraining = value;
-}
+    $("#training-dropdown").change(() => {
+        selectedTraining = $(this).find(":selected").val();
+    });
+});
 
 // Returns a random element of the specified array
 function randomExercise(array) {
-    return array[Math.random(array.length - 1)];
+    return array[Math.floor(Math.random() * (array.length))];
 }
 
 // Generates 4 random, unique exercises from the specified array
@@ -44,10 +46,13 @@ function generateExercises(type) {
     while (exercise4 === null || exercise4 === exercise1 || exercise4 === exercise2 || exercise4 === exercise3) {
         exercise4 = randomExercise(type);
     }
-    return true;
 }
 
-function generateWorkout() {
+// Code executed when Generate Workout button is click. Produces a random 4 exercise workout and displays it in an alert
+$("#generateButton").click(() => {
+    console.log(selectedExercise);
+    console.log(selectedIntensity);
+    console.log(selectedTraining);
     if (selectedExercise === undefined || selectedIntensity === undefined || selectedTraining === undefined) {
         return alert("Must choose one of each");
     } else {
@@ -89,7 +94,7 @@ function generateWorkout() {
         reps4 = lightStrengthReps(exercise4);
         alert(`Your workout for today is:\n\n${exercise1}: 4 sets, ${reps1} reps\n${exercise2}: 4 sets, ${reps2} reps\n${exercise3}: 4 sets, ${reps3} reps\n${exercise4}: 4 sets, ${reps4} reps\n\nIt is suggested to use lighter weights for this strength-based workout`);
     }
-}
+});
 
 // Suggested to use to heavier weights to push yourself - Okay to not be able to reach the amount of reps
 function intenseStrengthReps(exercise) {
@@ -242,8 +247,7 @@ const leg20reps = [
     "Calf Raises",
     "Jump Squats",
     "Farmers Walk"
-
-]
+];
 
 const armExercises = [
     "Dumbbell Curls",
@@ -285,12 +289,12 @@ const arms8reps = [
     "Wrist Curls",
     "Reverse Wrist Curls",
     "Tricep Kickbacks"
-]
+];
 
 const arms20reps = [
     "Bench Dips",
     "Wrist Rotations"
-]
+];
 
 const backExercises = [
     "Lat Pulldowns",
@@ -339,7 +343,7 @@ const back8reps = [
 const back20reps = [
     "Bar Hang",
     "Kettlebell Swings"
-]
+];
 
 const shoulderExercises = [
     "Shoulder Press",
