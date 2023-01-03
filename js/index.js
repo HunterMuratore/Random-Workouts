@@ -1,124 +1,17 @@
-const chestExercises = [
-    "Barbell Bench Press",
-    "Dumbbell Bench Press",
-    "Pushups",
-    "Wide Pushups",
-    "Close Pushups",
-    "Incline Pushups",
-    "Decline Pushups",
-    "Dumbbell Flyes",
-    "Chest Dips",
-    "Incline Bench Press",
-    "Decline Bench Press",
-    "High Cable Flyes",
-    "Mid Cable Flyes",
-    "Low Cable Flyes",
-    "Machine Flyes",
-    "Landmine Press"
-];
-
-const legExercises = [
-    "Squats",
-    "Leg Extensions",
-    "Bulgarian Split Squat",
-    "Leg Press",
-    "Calf Raises",
-    "Front Squats",
-    "Leg Curls",
-    "Lunges",
-    "Straight Leg Deadlifts",
-    "Dumbbell Stepup",
-    "Romanian Deadlift",
-    "Jump Squats",
-    "Pause Squats",
-    "Barbell Hip Thrust",
-    "Glute Bridges",
-    "Goblet Squat",
-    "Farmers Walk"
-];
-
-const armExercises = [
-    "Dumbbell Curls",
-    "Hammer Curls",
-    "Tricep Pulldowns",
-    "Barbell Curls",
-    "Barbell 21s Curl",
-    "Chin Ups",
-    "Close Grip Chin Ups",
-    "Seated Concentration Curls",
-    "Cable Curls",
-    "Bench Dips",
-    "Cable Face Pulls",
-    "Overhead Tricep Extentions",
-    "Preacher Curls",
-    "Cable Pushdowns",
-    "Reverse Lat Pulldowns",
-    "Wrist Curls",
-    "Reverse Wrist Curls",
-    "Tricep Kickbacks",
-    "Wrist Rotations"
-];
-
-const backExercises = [
-    "Lat Pulldowns",
-    "Close Grip Pulldowns",
-    "Wide Grip Pulldowns",
-    "Pullups",
-    "L Pullups",
-    "Bar Hang",
-    "Kettlebell Swings",
-    "Barbell Deadlift",
-    "Hex Bar Deadlift",
-    "Barbell Bent Over Rows",
-    "One-Arm Dumbbell Rows",
-    "Seated Rows",
-    "Landmine Rows",
-    "Dumbbell Romanian Deadlifts",
-    "Lying Reverse Flyes",
-    "Bentover Reverse Flyes",
-    "Dumbbell Snatches",
-    "Dumbbell Clean and Press",
-    "Barbell Hang Clean",
-    "Underhand Grip Bentover Rows"
-];
-
-const coreExercises = [
-    "Sit-Ups",
-    "Plank",
-    "Bicycle Kicks",
-    "Hanging Crunch",
-    "Hanging Bar Toe Touches",
-    "Incline Bench Leg Raises",
-    "Lying Leg Raises",
-    "Hanging Leg Raises",
-    "Decline Bench Sit-Ups"
-];
-
-const shoulderExercises = [
-    "Shoulder Press",
-    "Shrugs",
-    "Arnold Dumbbell Press",
-    "Bentover Lat Raises"
-];
-
-const stretchExercises = [
-    "Toe Touch",
-    "Butterfly",
-    "Wrist Pulls",
-    "Arm Pulls",
-    "Seated Spinal Twist",
-    "Side Lunges"
-];
 
 var selectedExercise;
 var selectedIntensity;
 var selectedTraining;
+var exercise1;
 var sets1;
 var reps1;
+var exercise2;
 var sets2;
 var reps2;
+var exercise3;
 var sets3;
 var reps3;
+var exercise4;
 var sets4;
 var reps4;
 
@@ -134,8 +27,24 @@ function trainingFunction(value) {
     selectedTraining = value;
 }
 
+// Returns a random element of the specified array
 function randomExercise(array) {
-    return array[Math.random(array.length)];
+    return array[Math.random(array.length - 1)];
+}
+
+// Generates 4 random, unique exercises from the specified array
+function generateExercises(type) {
+    exercise1 = randomExercise(type);
+    while (exercise2 === null || exercise2 === exercise1) {
+        exercise2 = randomExercise(type);
+    }
+    while (exercise3 === null || exercise3 === exercise1 || exercise3 === exercise2) {
+        exercise3 = randomExercise(type);
+    }
+    while (exercise4 === null || exercise4 === exercise1 || exercise4 === exercise2 || exercise4 === exercise3) {
+        exercise4 = randomExercise(type);
+    }
+    return true;
 }
 
 function generateWorkout() {
@@ -146,40 +55,19 @@ function generateWorkout() {
     }
 
     if (selectedExercise === "chest") {
-        var exercise1 = randomExercise(chestExercises);
-        var exercise2 = randomExercise(chestExercises);
-        var exercise3 = randomExercise(chestExercises);
-        var exercise4 = randomExercise(chestExercises);
+        generateExercises(chestExercises);
     } else if (selectedExercise === "legs") {
-        var exercise1 = randomExercise(legExercises);
-        var exercise2 = randomExercise(legExercises);
-        var exercise3 = randomExercise(legExercises);
-        var exercise4 = randomExercise(legExercises);
+        generateExercise(legExercises);
     } else if (selectedExercise === "back") {
-        var exercise1 = randomExercise(backExercises);
-        var exercise2 = randomExercise(backExercises);
-        var exercise3 = randomExercise(backExercises);
-        var exercise4 = randomExercise(backExercises);
+        generateExercise(backExercises);
     } else if (selectedExercise === "arms") {
-        var exercise1 = randomExercise(armExercises);
-        var exercise2 = randomExercise(armExercises);
-        var exercise3 = randomExercise(armExercises);
-        var exercise4 = randomExercise(armExercises);
+        generateExercise(armExercises);
     } else if (selectedExercise === "shoulders") {
-        var exercise1 = randomExercise(shoulderExercises);
-        var exercise2 = randomExercise(shoulderExercises);
-        var exercise3 = randomExercise(shoulderExercises);
-        var exercise4 = randomExercise(shoulderExercises);
+        generateExercise(shoulderExercises);
     } else if (selectedExercise === "core") {
-        var exercise1 = randomExercise(coreExercises);
-        var exercise2 = randomExercise(coreExercises);
-        var exercise3 = randomExercise(coreExercises);
-        var exercise4 = randomExercise(coreExercises);
+        generateExercise(coreExercises);
     } else if (selectedExercise === "stretch") {
-        var exercise1 = randomExercise(stretchExercises);
-        var exercise2 = randomExercise(stretchExercises);
-        var exercise3 = randomExercise(stretchExercises);
-        var exercise4 = randomExercise(stretchExercises);
+        generateExercise(stretchExercises);
     }
 
     if (selectedIntensity === "intense" && selectedTraining === "strength") {
@@ -272,6 +160,113 @@ function lightStrengthReps(exercise) {
     }
 }
 
+const chestExercises = [
+    "Barbell Bench Press",
+    "Dumbbell Bench Press",
+    "Pushups",
+    "Wide Pushups",
+    "Close Pushups",
+    "Incline Pushups",
+    "Decline Pushups",
+    "Dumbbell Flyes",
+    "Chest Dips",
+    "Incline Bench Press",
+    "Decline Bench Press",
+    "High Cable Flyes",
+    "Mid Cable Flyes",
+    "Low Cable Flyes",
+    "Machine Flyes",
+    "Landmine Press"
+];
+
+const chest8reps = [
+    "Barbell Bench Press",
+    "Dumbbell Bench Press",
+    "Dumbbell Flyes",
+    "Incline Bench Press",
+    "Decline Bench Press",
+    "High Cable Flyes",
+    "Mid Cable Flyes",
+    "Low Cable Flyes",
+    "Machine Flyes",
+    "Landmine Press",
+    "Chest Dips"
+];
+
+const chest20reps = [
+    "Pushups",
+    "Wide Pushups",
+    "Close Pushups",
+    "Incline Pushups",
+    "Decline Pushups",
+];
+
+const legExercises = [
+    "Squats",
+    "Leg Extensions",
+    "Bulgarian Split Squat",
+    "Leg Press",
+    "Calf Raises",
+    "Front Squats",
+    "Leg Curls",
+    "Lunges",
+    "Straight Leg Deadlifts",
+    "Dumbbell Stepup",
+    "Romanian Deadlift",
+    "Jump Squats",
+    "Pause Squats",
+    "Barbell Hip Thrust",
+    "Glute Bridges",
+    "Goblet Squat",
+    "Farmers Walk"
+];
+
+const leg8reps = [
+    "Squats",
+    "Leg Extensions",
+    "Bulgarian Split Squat",
+    "Leg Press",
+    "Front Squats",
+    "Leg Curls",
+    "Lunges",
+    "Straight Leg Deadlifts",
+    "Dumbbell Stepup",
+    "Romanian Deadlift",
+    "Pause Squats",
+    "Barbell Hip Thrust",
+    "Glute Bridges",
+    "Goblet Squat",
+];
+
+const leg20reps = [
+    "Calf Raises",
+    "Jump Squats",
+    "Farmers Walk"
+
+]
+
+const armExercises = [
+    "Dumbbell Curls",
+    "Hammer Curls",
+    "Tricep Pulldowns",
+    "Barbell Curls",
+    "Barbell 21s Curl",
+    "Chin Ups",
+    "Close Grip Chin Ups",
+    "Seated Concentration Curls",
+    "Cable Curls",
+    "Bench Dips",
+    "Cable Face Pulls",
+    "Overhead Tricep Extentions",
+    "Preacher Curls",
+    "Cable Pushdowns",
+    "Reverse Lat Pulldowns",
+    "Wrist Curls",
+    "Reverse Wrist Curls",
+    "Tricep Kickbacks",
+    "Wrist Rotations"
+];
+
 const arms8reps = [
     "Dumbbell Curls",
     "Hammer Curls",
@@ -296,6 +291,29 @@ const arms20reps = [
     "Bench Dips",
     "Wrist Rotations"
 ]
+
+const backExercises = [
+    "Lat Pulldowns",
+    "Close Grip Pulldowns",
+    "Wide Grip Pulldowns",
+    "Pullups",
+    "L Pullups",
+    "Bar Hang",
+    "Kettlebell Swings",
+    "Barbell Deadlift",
+    "Hex Bar Deadlift",
+    "Barbell Bent Over Rows",
+    "One-Arm Dumbbell Rows",
+    "Seated Rows",
+    "Landmine Rows",
+    "Dumbbell Romanian Deadlifts",
+    "Lying Reverse Flyes",
+    "Bentover Reverse Flyes",
+    "Dumbbell Snatches",
+    "Dumbbell Clean and Press",
+    "Barbell Hang Clean",
+    "Underhand Grip Bentover Rows"
+];
 
 const back8reps = [
     "Lat Pulldowns",
@@ -323,48 +341,30 @@ const back20reps = [
     "Kettlebell Swings"
 ]
 
-const leg8reps = [
-    "Squats",
-    "Leg Extensions",
-    "Bulgarian Split Squat",
-    "Leg Press",
-    "Front Squats",
-    "Leg Curls",
-    "Lunges",
-    "Straight Leg Deadlifts",
-    "Dumbbell Stepup",
-    "Romanian Deadlift",
-    "Pause Squats",
-    "Barbell Hip Thrust",
-    "Glute Bridges",
-    "Goblet Squat",
+const shoulderExercises = [
+    "Shoulder Press",
+    "Shrugs",
+    "Arnold Dumbbell Press",
+    "Bentover Lat Raises"
 ];
 
-const leg20reps = [
-    "Calf Raises",
-    "Jump Squats",
-    "Farmers Walk"
-
-]
-
-const chest8reps = [
-    "Barbell Bench Press",
-    "Dumbbell Bench Press",
-    "Dumbbell Flyes",
-    "Incline Bench Press",
-    "Decline Bench Press",
-    "High Cable Flyes",
-    "Mid Cable Flyes",
-    "Low Cable Flyes",
-    "Machine Flyes",
-    "Landmine Press",
-    "Chest Dips"
+const coreExercises = [
+    "Sit-Ups",
+    "Plank",
+    "Bicycle Kicks",
+    "Hanging Crunch",
+    "Hanging Bar Toe Touches",
+    "Incline Bench Leg Raises",
+    "Lying Leg Raises",
+    "Hanging Leg Raises",
+    "Decline Bench Sit-Ups"
 ];
 
-const chest20reps = [
-    "Pushups",
-    "Wide Pushups",
-    "Close Pushups",
-    "Incline Pushups",
-    "Decline Pushups",
+const stretchExercises = [
+    "Toe Touch",
+    "Butterfly",
+    "Wrist Pulls",
+    "Arm Pulls",
+    "Seated Spinal Twist",
+    "Side Lunges"
 ];
