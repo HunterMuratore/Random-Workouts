@@ -11,19 +11,19 @@ var exercise4;
 var reps4;
 
 // Assigns the selected values of the dropdowns to their appropriate variables
-// $( document ).ready(function() {
-//     $("#exercise-dropdown").change(() => {
-//         selectedExercise = $(this).find(":selected").val();
-//     });
+$( document ).ready(function() {
+    $("#exercise-dropdown").change(() => {
+        selectedExercise = $("#exercise-dropdown").find(":selected").val();
+    });
 
-//     $("#intensity-dropdown").change(() => {
-//         selectedIntensity = $(this).find(":selected").val();
-//     });
+    $("#intensity-dropdown").change(() => {
+        selectedIntensity = $("#intensity-dropdown").find(":selected").val();
+    });
 
-//     $("#training-dropdown").change(() => {
-//         selectedTraining = $(this).find(":selected").val();
-//     });
-// });
+    $("#training-dropdown").change(() => {
+        selectedTraining = $("#training-dropdown").find(":selected").val();
+    });
+});
 
 // Allows user to submit a message only if all required fields are filled out
 // $( document ).getElementById("feedback").addEventListener("submit", function(e) {
@@ -42,18 +42,6 @@ var reps4;
 //       e.preventDefault();
 //     }
 //   }, false);
-
-function exerciseFunction(value) {
-    selectedExercise = value;
-}
-
-function intensityFunction(value) {
-    selectedIntensity = value;
-}
-
-function trainingFunction(value) {
-    selectedTraining = value;
-}
 
 // Returns a random element of the specified array
 function randomExercise(array) {

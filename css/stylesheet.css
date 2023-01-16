@@ -18,7 +18,7 @@ h6 {
     margin-right: 30px;
 }
 
-.exercise-dropdown {
+#exercise-dropdown {
     font-size: 20px;
 }
 
@@ -29,7 +29,7 @@ h6 {
     margin-right: 30px;
 }
 
-.intensity-dropdown {
+#intensity-dropdown {
     font-size: 20px;
 }
 
@@ -40,7 +40,7 @@ h6 {
     margin-right: -30px;
 }
 
-.training-dropdown {
+#training-dropdown {
     font-size: 20px;
 }
 
