@@ -48,21 +48,46 @@
         <div class="generate mt-5">
             <button type="button" class="btn btn-outline-dark btn-lg" id="generateButton">Generate Workout</button>
         </div>
+        <div class="gabby mt-5">
+          <button type="button" class="btn btn-outline-dark btn-lg" id="gabbyButton">Gabby's Workout</button>
+        </div>
     </div>
 
-    <div class="feedback-box mt-5" id="feedback">
-        <div class="feedback-form mt-4" id="feedback">
-	    	<form>
-	    		<h2>Leave Feedback</h2>
-                <em>Work in progress, send email instead</em>
-	    		<p><label>Name: </label><input type="text" required name="name" value=""/></p>
-	    		<p><label>Email: </label><input type="email" required name="email" value=""/></p>
-	    		<p><label>Message: </label><textarea required name="message" value=""></textarea></p>
-	    		<p><input type="submit" value="Send Feedback" class="btn btn-outline-dark btn-md"/></p>
-                <p><a target="_blank" href="mailto:muratoreh@gmail.com" class="btn btn-outline-dark btn-md">Email Me</a></p>
-	    	</form>
-	    </div>
-    </div>
+
+    <div class="feedback-form mt-5" id="feedback">
+      <h3>Contact Me</h3>
+      <form class="row g-3" action="https://formsubmit.co/muratoreh@gmail.com" method="POST">
+          <!-- Honeypot -->
+          <input type="text" name="_honey" style="display: none;">
+          <!-- Disable Captcha -->
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Success Page -->
+          <!-- <input type="hidden" name="_next" value=""> -->
+          <!-- Email Subject -->
+          <input type="hidden" name="subject" value="New Workout Message">
+          <!-- Email Recipient -->
+          <input type="hidden" name="send-to" value="muratoreh@gmail.com">
+          <div class="col-md-4">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" name="First&nbsp;Name" id="firstName" required>
+          </div>
+          <div class="col-md-4">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
+          </div>
+          <div class="col-md-5">
+              <label for="emailInfo" class="form-label">Email</label>
+              <input type="email" class="form-control" name="Email" id="emailInfo" required>
+          </div>
+          <div class="col-md-8">
+              <label for="questions" class="form-label">Feedback</label>
+              <textarea class="form-control" name="Message" id="questions" rows="3" placeholder="Suggest new exercises or comment on existing ones here" required></textarea>
+          </div>
+          <div class="col-md-12">
+              <button type="submit" class="btn btn-light btn-outline-dark btn-lg">Send Feedback</button>
+          </div>
+      </form>
+	  </div>
 
     <table class="table table-bordered mt-5" id="exercise-table">
         <thead class="thead">

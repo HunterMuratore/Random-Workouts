@@ -25,24 +25,6 @@ $( document ).ready(function() {
     });
 });
 
-// Allows user to submit a message only if all required fields are filled out
-// $( document ).getElementById("feedback").addEventListener("submit", function(e) {
-//     var form = this;
-//     if(form.name.value == "") {
-//       alert("Please enter your name");
-//       form.name.focus();
-//       e.preventDefault();
-//     } else if(form.email.value == "") {
-//       alert("Please enter a valid email address");
-//       form.email.focus();
-//       e.preventDefault();
-//     } else if(form.message.value == "") {
-//       alert("Please enter your feedback");
-//       form.message.focus();
-//       e.preventDefault();
-//     }
-//   }, false);
-
 // Returns a random element of the specified array
 function randomExercise(array) {
     return array[Math.floor(Math.random() * (array.length))];
@@ -142,6 +124,18 @@ $("#generateButton").click(() => {
         resetExercises();
     } else if (selectedIntensity === "light" && selectedTraining === "body-weight") {
         alert(`Your workout for today is:\n\n${exercise1}: 3 sets, ${reps1} reps\n${exercise2}: 3 sets, ${reps2} reps\n${exercise3}: 3 sets, ${reps3} reps\n${exercise4}: 3 sets, ${reps4} reps`);
+        resetExercises();
+    }
+});
+
+// Password protected button only Gabby can click
+$("#gabbyButton").click(() => {
+    var secret = prompt('Please enter the password: ');
+    if (!(secret === password)) {
+        return alert('Wrong password :()');
+    } else {
+        generateExercises(gabbyExercises);
+        alert(`Your workout for today is:\n\n${exercise1}: 3 sets\n${exercise2}: 3 sets\n${exercise3}: 3 sets`);
         resetExercises();
     }
 });
@@ -457,4 +451,19 @@ const stretchExercises = [
     "Arm Pulls",
     "Seated Spinal Twist",
     "Side Lunges"
+];
+
+const gabbyExercises = [
+    "Incline Treadmill Walk", 
+    "Treadmill Run", 
+    "Planks",
+    "Body-Weight Squats",
+    "Forward Lunges", 
+    "Side Lunges",
+    "Stair Climb",
+    "Jump Squats",
+    "Glute Bridges",
+    "Push-ups",
+    "Bench Dips",
+    "Goblet Squats"
 ];

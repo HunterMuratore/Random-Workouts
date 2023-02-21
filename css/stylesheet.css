@@ -48,17 +48,15 @@ h6 {
     max-width: fit-content;
 }
 
-.feedback-box {
-    min-width: fit-content;
-    border: 5px solid black;
-    margin-right: 1500px;
-    margin-left: 50px;
-    background-color: lightgrey;
+.feedback-form {
+    padding-left: 80px;
+    padding-right: 40%;
+    position: relative;
+    text-align: left;
 }
 
-.feedback-form {
-    max-width: fit-content;
-    margin-left: 100px;
+#gabbyButton {
+    background-image: url("../img/clouds.jpg");
 }
 
 input {  
