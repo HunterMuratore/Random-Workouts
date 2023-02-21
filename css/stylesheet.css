@@ -1,6 +1,10 @@
 html, body {
     margin: 0;
-    background-color: azure;
+    background: url(../img/dumbbell-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-color: black;
 }
 
 h1 {
@@ -9,43 +13,77 @@ h1 {
 
 h6 {
     text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .exercise {
     background-color: coral;
     font-size: 20px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    margin-right: 30px;
+    box-shadow: 0 5px 10px 0 rgb(255, 255, 255), 0 10px 50px 0 rgb(255, 255, 255);
+    margin-right: -10%;
+    color: black;
+    margin-bottom: 20px;
 }
 
 #exercise-dropdown {
     font-size: 20px;
+    width: 150px;
 }
 
 .intensity {
     background-color: rgb(80, 252, 255);
     font-size: 20px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    margin-right: 30px;
+    box-shadow: 0 5px 10px 0 rgb(255, 255, 255), 0 10px 50px 0 rgb(255, 255, 255);
+    margin-right: -10%;
+    color: black;
+    margin-bottom: 20px;
 }
 
 #intensity-dropdown {
     font-size: 20px;
+    width: 150px;
 }
 
 .training {
     background-color: rgb(255, 86, 80);
     font-size: 20px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    margin-right: -30px;
+    box-shadow: 0 5px 10px 0 rgb(255, 255, 255), 0 10px 50px 0 rgb(255, 255, 255);
+    margin-right: -10%;
+    color: black;
+    margin-bottom: 20px;
 }
 
 #training-dropdown {
     font-size: 20px;
+    width: 150px;
 }
 
 .container {
-    max-width: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .training-group {
+        padding-left: 44%;
+        padding-right: 27%; 
+    }
+
+    .exercise-group {
+        padding-left: 44%;
+        padding-right: 27%; 
+    }
+
+    .intensity-group {
+        padding-left: 44%;
+        padding-right: 27%; 
+    }
 }
 
 .feedback-form {
@@ -53,6 +91,13 @@ h6 {
     padding-right: 40%;
     position: relative;
     text-align: left;
+}
+
+.buttons {
+    justify-content: center;
+    padding-left: 45%;
+    padding-right: 40%; 
+    margin-top: 100px;
 }
 
 #gabbyButton {
@@ -80,10 +125,18 @@ textarea {
 }
 
 .thead {
-    background-color: rgb(43, 42, 42);
+    background-color: rgb(0, 0, 0);
     color: white
 }
 
 .source {
     text-align: center;
+}
+
+footer {
+    background-color: rgb(6, 6, 6);
+}
+
+tbody {
+    color: white;
 }
