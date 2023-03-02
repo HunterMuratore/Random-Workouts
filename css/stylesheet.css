@@ -18,11 +18,11 @@ h6 {
 }
 
 .exercise {
-    background-color: coral;
+    background-color: rgb(17, 17, 17);
+    color: white;
     font-size: 20px;
     box-shadow: 0 5px 10px 0 rgb(255, 255, 255), 0 10px 50px 0 rgb(255, 255, 255);
     margin-right: -10%;
-    color: black;
     margin-bottom: 20px;
 }
 
@@ -32,11 +32,11 @@ h6 {
 }
 
 .intensity {
-    background-color: rgb(80, 252, 255);
+    background-color: rgb(17, 17, 17);
+    color: white;
     font-size: 20px;
     box-shadow: 0 5px 10px 0 rgb(255, 255, 255), 0 10px 50px 0 rgb(255, 255, 255);
     margin-right: -10%;
-    color: black;
     margin-bottom: 20px;
 }
 
@@ -46,11 +46,11 @@ h6 {
 }
 
 .training {
-    background-color: rgb(255, 86, 80);
+    background-color: rgb(17, 17, 17);
+    color: white;
     font-size: 20px;
     box-shadow: 0 5px 10px 0 rgb(255, 255, 255), 0 10px 50px 0 rgb(255, 255, 255);
     margin-right: -10%;
-    color: black;
     margin-bottom: 20px;
 }
 
@@ -102,6 +102,8 @@ h6 {
 
 #gabbyButton {
     background-image: url("../img/clouds.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 input {  
