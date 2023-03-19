@@ -217,6 +217,13 @@ function lightStrengthReps(exercise) {
     }
 }
 
+// Show exercise table on button click
+$('[data-switch]').on('click', function (e) {
+    var $page = $('#footer'),
+        blockToShow = e.currentTarget.getAttribute('data-switch');
+    $page.children(blockToShow).show();
+});
+
 const chestExercises = [
     "Barbell Bench Press",
     "Dumbbell Bench Press",

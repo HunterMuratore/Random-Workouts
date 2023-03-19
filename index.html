@@ -63,37 +63,36 @@
     <div class="feedback-form mt-5" id="feedback">
       <h3>Contact Me</h3>
       <form class="row g-3" action="https://mail.huntermuratore.com/muratoreh@gmail.com" method="POST">
-          <!-- Honeypot -->
-          <input type="text" name="_honey" style="display: none;">
-          <!-- Disable Captcha -->
-          <input type="hidden" name="_captcha" value="false">
           <!-- Success Page -->
           <input type="hidden" name="_next" value="https://huntermuratore.com/workout/success.html">
           <!-- Email Subject -->
           <input type="hidden" name="subject" value="New Workout Message">
           <div class="col-md-4">
               <label for="firstName" class="form-label">First Name</label>
-              <input type="text" class="form-control" name="First&nbsp;Name" id="firstName" required>
+              <input type="text" class="form-control" name="First Name" id="firstName" required>
           </div>
           <div class="col-md-4">
               <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
+              <input type="text" class="form-control" name="Last Name" id="lastName" required>
           </div>
           <div class="col-md-5">
               <label for="emailInfo" class="form-label">Email</label>
-              <input type="email" class="form-control" name="Email" id="emailInfo" required>
+              <input type="email" class="form-control" name="Email" id="emailInfo" placeholder="your@email.com" required>
           </div>
           <div class="col-md-8">
               <label for="questions" class="form-label">Feedback</label>
-              <textarea class="form-control" name="Message" id="questions" rows="3" placeholder="Suggest new exercises or comment on existing ones here" required></textarea>
+              <textarea class="form-control" name="Message" id="message" rows="3" placeholder="Suggest new exercises or comment on existing ones here" required></textarea>
           </div>
           <div class="col-md-12">
               <button type="submit" class="btn btn-light btn-outline-dark btn-lg">Send Feedback</button>
           </div>
       </form>
 	  </div>
-    <footer>
-      <table class="table table-bordered mt-5" id="exercise-table">
+    <div class="table-show mt-5">
+      <a href="#exercise-table"><button data-switch="#exercise-table" class="btn btn-outline-dark btn-lg">Exercise Table</button></a>
+    </div>
+    <footer  id="footer">
+      <table class="table table-bordered mt-3" id="exercise-table">
         <thead class="thead">
             <tr>
               <th>Chest Exercises</th>
@@ -218,10 +217,6 @@
             </tr>
         </tbody>
       </table>
-      <div class="source">
-      The source code for this website can be found at 
-      <a target="_blank" href="https://github.com/HunterMuratore/Random-Workouts">https://github.com/HunterMuratore/Random-Workouts</a>
-      </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.2.slim.min.js" integrity="sha256-E3P3OaTZH+HlEM7f1gdAT3lHAn4nWBZXuYe89DFg2d0=" crossorigin="anonymous"></script>

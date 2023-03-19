@@ -1,10 +1,10 @@
 html, body {
     margin: 0;
-    background: url(../img/dumbbell-bg.png);
+    /* background: url(../img/dumbbell-bg.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     color: white;
-    background-color: black;
+    background-color: rgb(17, 17, 17);
 }
 
 h1 {
@@ -88,8 +88,7 @@ h6 {
 
 .feedback-form {
     padding-left: 80px;
-    padding-right: 40%;
-    position: relative;
+    padding-right: 35%;
     text-align: left;
 }
 
@@ -126,17 +125,22 @@ textarea {
     background-color: white;
 }
 
+.table-show {
+    padding-left: 2%;
+}
+
+#exercise-table {
+    display: none;
+}
+
 .thead {
     background-color: rgb(0, 0, 0);
     color: white
 }
 
-.source {
-    text-align: center;
-}
-
 footer {
-    background-color: rgb(6, 6, 6);
+    background-color: rgb(17, 17, 17);
+    padding: 2%;
 }
 
 tbody {
